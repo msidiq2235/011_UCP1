@@ -63,7 +63,7 @@ app.delete("/music/:id", async(req,res)=>{
 
     try{
         const music = await db.Music.findByPk(id);
-        if (!lagu){
+        if (!music){
             return res.status(404).send({ message: "lagu tidak tersedia"});
         }
         await music.destroy();
